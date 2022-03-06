@@ -1,6 +1,6 @@
 import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
 import { Switch } from '@chakra-ui/switch';
-import { Stack, Box } from '@chakra-ui/layout';
+import { Stack } from '@chakra-ui/layout';
 import { RiMoonFill, RiSunLine } from 'react-icons/ri';
 
 export const ThemeToggle = () => {
