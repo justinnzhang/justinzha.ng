@@ -1,9 +1,8 @@
-// 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, type ThemeConfig } from '@chakra-ui/react';
 
-// 2. Extend the theme to include custom colors, fonts, etc
-const colors = {
-  initialColorMode: 'dark',
+const config: ThemeConfig = {
+  initialColorMode: 'light',
+  useSystemColorMode: false,
 };
 
-export const theme = extendTheme({ colors });
+export const theme = extendTheme({ config });
