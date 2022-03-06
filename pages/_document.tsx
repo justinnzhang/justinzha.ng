@@ -25,12 +25,8 @@ export default class Document extends NextDocument {
           <meta name='theme-color' content='#3182CE' />
 
           {/* add your own app-icon */}
-          {/* <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/icons/apple-touch-icon.png"
-          />
-          <link rel="shortcut icon" href="/app-icon.png" /> */}
+          <link rel='apple-touch-icon' sizes='180x180' href='/favicon.ico' />
+          <link rel='shortcut icon' href='/favicon.ico' />
           <link rel='manifest' href='/manifest.json' />
 
           <meta name='description' content={APP_DESCRIPTION} />
@@ -40,7 +36,7 @@ export default class Document extends NextDocument {
           <meta itemProp='image' content={PREVIEW_IMAGE} />
 
           <meta name='twitter:card' content='summary_large_image' />
-          {/* <meta name='twitter:site' content='@justinnzhang' /> */}
+          <meta name='twitter:site' content='@justinnzhang' />
           <meta name='twitter:title' content={APP_NAME} />
           <meta name='twitter:description' content={APP_DESCRIPTION} />
           <meta name='twitter:creator' content='@justinnzhang' />
