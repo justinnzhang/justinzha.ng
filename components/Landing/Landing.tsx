@@ -1,5 +1,7 @@
 import { Container, Heading, Text, Stack, Center } from '@chakra-ui/layout';
 import { IconButton, Button } from '@chakra-ui/button';
+import { useColorModeValue } from '@chakra-ui/color-mode';
+import { Switch } from '@chakra-ui/switch';
 
 import {
   GrLinkedinOption,
@@ -7,55 +9,65 @@ import {
   GrTwitter,
   GrSafariOption,
 } from 'react-icons/gr';
-
-const MAIN_LINKS = [
-  {
-    icon: <GrSafariOption />,
-    styles: {},
-    colorScheme: 'purple',
-    href: 'https://hirejustinzhang.com',
-    'aria-label': 'Hire Justin Zhang',
-    label: 'Hire Justin Zhang',
-  },
-];
-
-const SOCIAL_LINKS = [
-  {
-    icon: <GrGithub />,
-    styles: {
-      bg: 'gray.700',
-      color: 'gray.50',
-      _hover: {
-        bg: 'gray.600',
-      },
-    },
-    href: 'https://github.com/justinnzhang',
-    'aria-label': 'GitHub profile link',
-  },
-  {
-    icon: <GrLinkedinOption />,
-    styles: {},
-    colorScheme: 'linkedin',
-    href: 'https://linkedin.com/in/justinzhang000',
-    'aria-label': 'LinkedIn profile link',
-  },
-  {
-    icon: <GrTwitter />,
-    styles: {},
-    colorScheme: 'twitter',
-    href: 'https://twitter.com/justinnzhang',
-    'aria-label': 'Twitter profile link',
-  },
-];
+import { ThemeToggle } from '../ThemeToggle';
 
 export const Landing = () => {
+  const MAIN_LINKS = [
+    {
+      icon: <GrSafariOption />,
+      styles: {},
+      colorScheme: 'purple',
+      href: 'https://hirejustinzhang.com',
+      'aria-label': 'Hire Justin Zhang',
+      label: 'Hire Justin Zhang',
+    },
+  ];
+
+  const SOCIAL_LINKS = [
+    {
+      icon: <GrGithub />,
+      styles: {
+        bg: useColorModeValue('gray.200', 'gray.700'),
+        color: useColorModeValue('gray.800', 'gray.50'),
+        _hover: {
+          bg: useColorModeValue('gray.300', 'gray.600'),
+        },
+      },
+      href: 'https://github.com/justinnzhang',
+      'aria-label': 'GitHub profile link',
+    },
+    {
+      icon: <GrLinkedinOption />,
+      styles: {},
+      colorScheme: 'linkedin',
+      href: 'https://linkedin.com/in/justinzhang000',
+      'aria-label': 'LinkedIn profile link',
+    },
+    {
+      icon: <GrTwitter />,
+      styles: {},
+      colorScheme: 'twitter',
+      href: 'https://twitter.com/justinnzhang',
+      'aria-label': 'Twitter profile link',
+    },
+  ];
+
+  const leftTextGradient = useColorModeValue('#4366C1', '#C4F1F9');
+  const rightTextGradient = useColorModeValue('#A864FF', '#D6BCFA');
+
   return (
     <Center h='100vh' w='100vw'>
       <Container maxWidth='20rem'>
         <Stack spacing={8}>
           <Stack>
-            <Heading color='gray.50'>Welcome 👋</Heading>
-            <Text color='gray.400'>
+            <ThemeToggle />
+            <Heading
+              bgGradient={`linear(to-l, ${leftTextGradient}, ${rightTextGradient})`}
+              bgClip='text'
+            >
+              Welcome 👋
+            </Heading>
+            <Text color={useColorModeValue('gray.500', 'gray.300')}>
               Still under construction, in the meantime check out the links
               below!
             </Text>
