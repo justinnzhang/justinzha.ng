@@ -1,7 +1,6 @@
 import { Container, Heading, Text, Stack, Center } from '@chakra-ui/layout';
 import { IconButton, Button } from '@chakra-ui/button';
 import { useColorModeValue } from '@chakra-ui/color-mode';
-import { Switch } from '@chakra-ui/switch';
 
 import {
   GrLinkedinOption,
@@ -20,6 +19,14 @@ export const Landing = () => {
       href: 'https://hirejustinzhang.com',
       'aria-label': 'Hire Justin Zhang',
       label: 'Hire Justin Zhang',
+    },
+    {
+      icon: <GrSafariOption />,
+      styles: {},
+      colorScheme: 'purple',
+      href: 'https://justinzhang.ca',
+      'aria-label': 'Portfolio Website',
+      label: 'Portfolio',
     },
   ];
 
