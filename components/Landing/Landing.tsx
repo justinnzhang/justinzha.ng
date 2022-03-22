@@ -72,7 +72,7 @@ export const Landing = () => {
               bgGradient={`linear(to-l, ${leftTextGradient}, ${rightTextGradient})`}
               bgClip='text'
             >
-              Welcome 👋
+              Welcome!
             </Heading>
             <Text color={useColorModeValue('gray.500', 'gray.300')}>
               Still under construction, in the meantime check out the links
