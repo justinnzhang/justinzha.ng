@@ -7,6 +7,7 @@ import {
   GrGithub,
   GrTwitter,
   GrSafariOption,
+  GrYoutube,
 } from 'react-icons/gr';
 import { ThemeToggle } from '../ThemeToggle';
 
@@ -32,6 +33,20 @@ export const Landing = () => {
 
   const SOCIAL_LINKS = [
     {
+      icon: <GrLinkedinOption />,
+      styles: {},
+      colorScheme: 'linkedin',
+      href: 'https://linkedin.com/in/justinzhang000',
+      'aria-label': 'LinkedIn profile link',
+    },
+    {
+      icon: <GrYoutube />,
+      styles: {},
+      colorScheme: 'red',
+      href: 'https://youtube.com/justinzhang',
+      'aria-label': 'YouTube channel link',
+    },
+    {
       icon: <GrGithub />,
       styles: {
         bg: useColorModeValue('gray.200', 'gray.700'),
@@ -42,13 +57,6 @@ export const Landing = () => {
       },
       href: 'https://github.com/justinnzhang',
       'aria-label': 'GitHub profile link',
-    },
-    {
-      icon: <GrLinkedinOption />,
-      styles: {},
-      colorScheme: 'linkedin',
-      href: 'https://linkedin.com/in/justinzhang000',
-      'aria-label': 'LinkedIn profile link',
     },
     {
       icon: <GrTwitter />,
