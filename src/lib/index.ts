@@ -1,0 +1,1 @@
+export { generateUtm } from './generateUtm';

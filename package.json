@@ -1,27 +1,39 @@
 {
-  "name": "justinzha.ng",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@chakra-ui/react": "^1.8.6",
-    "@emotion/react": "^11.8.1",
-    "@emotion/styled": "^11.8.1",
-    "framer-motion": "^6.2.8",
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.3.1"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
-    "eslint": "8.10.0",
-    "eslint-config-next": "12.1.0"
-  }
+	"name": "justinzha.ng",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@radix-ui/react-dialog": "^1.0.5",
+		"@radix-ui/react-slot": "^1.0.2",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.0.0",
+		"framer-motion": "^10.16.14",
+		"lucide-react": "^0.294.0",
+		"next": "^14.0.4",
+		"react": "^18",
+		"react-dom": "^18",
+		"tailwind-merge": "^2.1.0",
+		"tailwindcss-animate": "^1.0.7",
+		"vaul": "^0.9.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"autoprefixer": "^10.4.16",
+		"eslint": "^8",
+		"eslint-config-next": "14.0.3",
+		"postcss": "^8.4.32",
+		"postcss-nesting": "^12.0.2",
+		"prettier": "^3.1.1",
+		"prettier-plugin-tailwindcss": "^0.5.9",
+		"tailwindcss": "^3.3.6",
+		"typescript": "^5"
+	}
 }

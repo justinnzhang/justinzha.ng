@@ -1,0 +1,1 @@
+export { getAssetsUrl } from './getAssetsUrl';

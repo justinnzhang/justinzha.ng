@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	p {
+		@apply text-slate-50;
+	}
+
+	.home-page-container {
+		:nth-child(4n + 1) {
+			@apply col-span-12 sm:col-span-8;
+		}
+
+		:nth-child(4n + 2) {
+			@apply col-span-12 sm:col-span-4;
+		}
+
+		:nth-child(4n + 3) {
+			@apply col-span-12 sm:col-span-3;
+		}
+
+		:nth-child(4n + 4) {
+			@apply col-span-12 sm:col-span-9;
+		}
+	}
+
+	.home-page-container-v2 {
+		:nth-child(6n + 1),
+		:nth-child(6n + 2),
+		:nth-child(6n + 3),
+		:nth-child(6n + 4),
+		:nth-child(6n + 5) {
+			@apply col-span-12 sm:col-span-4;
+		}
+	}
+}

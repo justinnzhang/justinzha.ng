@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": "next/core-web-vitals",
+	"import/order": [
+		"warning",
+		{
+			"newlines-between": "always",
+			"pathGroups": [
+				{
+					"pattern": "@/**",
+					"group": "internal",
+					"position": "after"
+				}
+			],
+			"distinctGroup": true
+		}
+	]
 }
