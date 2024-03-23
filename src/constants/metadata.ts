@@ -41,4 +41,7 @@ export const baseMetadata = {
 	},
 	category: 'Personal Site',
 	metadataBase: new URL('https://justinzha.ng'),
+	alternates: {
+		canonical: '/',
+	},
 };
