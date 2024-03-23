@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { baseMetadata } from '@/constants/metadata';
+import { baseMetadata } from '@/constants';
 
 import { ThoughtsPage } from './ThoughtsPage';
 

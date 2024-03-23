@@ -1,6 +1,6 @@
 const DEFAULT_DESCRIPTION =
 	'My space on the internet where I document my journey finding purpose through crafting delightful experience via software!';
-const DEFAULT_OG_IMAGE = `/static/og-image.jpeg`;
+const DEFAULT_OG_IMAGE = `/static/og-image.jpg`;
 
 export const baseMetadata = {
 	title: {
