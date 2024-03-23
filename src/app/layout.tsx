@@ -1,16 +1,26 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Urbanist } from 'next/font/google';
-import './globals.css';
-import './custom.css';
-import { Navbar } from '@/components/Nav/Navbar';
+import { Analytics } from '@vercel/analytics/react';
+
+import { Footer, Navbar } from '@/components';
+import { baseMetadata } from '@/constants';
 import { Suspense } from 'react';
-import { Footer } from '@/components';
+
+import './custom.css';
+import './globals.css';
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: `Justin Zhang's Space`,
-	description: 'Holding & learning',
+	...baseMetadata,
+};
+
+export const viewport: Viewport = {
+	themeColor: [
+		{ media: '(prefers-color-scheme: light)', color: 'black' },
+		{ media: '(prefers-color-scheme: dark)', color: 'black' },
+	],
+	colorScheme: 'dark',
 };
 
 export default function RootLayout({
@@ -28,6 +38,7 @@ export default function RootLayout({
 					<Navbar />
 				</Suspense>
 				<Footer />
+				<Analytics />
 			</body>
 		</html>
 	);
