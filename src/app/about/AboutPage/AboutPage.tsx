@@ -7,7 +7,7 @@ import { ABOUT_CONTENT } from './content';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { PUBLIC_EMAIL, baseMetadata } from '@/constants';
+import { PUBLIC_EMAIL } from '@/constants';
 import { Mail } from 'lucide-react';
 
 const VARIANTS = {
@@ -17,7 +17,7 @@ const VARIANTS = {
 	animate: {
 		opacity: 1,
 		transition: {
-			staggerChildren: 0.1,
+			staggerChildren: 0.05,
 			beforeChildren: true,
 		},
 	},
