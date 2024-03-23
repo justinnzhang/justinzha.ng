@@ -40,4 +40,5 @@ export const baseMetadata = {
 		}, // Must be an absolute URL
 	},
 	category: 'Personal Site',
+	metadataBase: new URL('https://justinzha.ng'),
 };
