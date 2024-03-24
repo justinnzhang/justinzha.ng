@@ -5,6 +5,7 @@ import { MotionImage, MotionLink } from '../utilities';
 import { ExternalLink, Link, MoveRight } from 'lucide-react';
 
 import { BaseCardProps, CardMediaProps, CardContentProps } from './types';
+import { cn } from '@/lib/utils';
 
 const VARIANTS = {
 	initial: {
@@ -40,7 +41,11 @@ export const BaseCard = ({
 	isExternal = false,
 	minHeightClass = 'min-h-[200px] sm:min-h-[220px]',
 }: BaseCardProps) => {
-	const computedClassName = `flex flex-col border-[1px] border-slate-700 rounded-xl bg-slate-900 relative h-full ${minHeightClass} ${className} group overflow-hidden`;
+	const computedClassName = cn(
+		`flex flex-col border-[1px] border-slate-700 rounded-xl bg-slate-900 relative h-full group overflow-hidden`,
+		className,
+		minHeightClass
+	);
 
 	if (!linkProps) {
 		return (
@@ -60,7 +65,7 @@ export const BaseCard = ({
 				target='_blank'
 				rel='noopener noreferrer'
 				title={alt}
-				className={`group cursor-pointer ${computedClassName}`}
+				className={cn(`group cursor-pointer`, computedClassName)}
 				variants={VARIANTS}
 				{...LINK_VARIANTS}
 			>
@@ -74,7 +79,7 @@ export const BaseCard = ({
 		<MotionLink
 			href={href}
 			title={alt}
-			className={`group cursor-pointer ${computedClassName}`}
+			className={cn(`group cursor-pointer`, computedClassName)}
 			variants={VARIANTS}
 			{...LINK_VARIANTS}
 		>
@@ -97,7 +102,7 @@ export const CardMedia = ({
 				src={src}
 				alt={alt}
 				fill={true}
-				className={`z-0 object-cover ${className}`}
+				className={cn(`z-0 object-cover`, className)}
 				fetchPriority={priority}
 				sizes={sizes}
 			/>
@@ -134,7 +139,10 @@ export const CardContent = ({
 		<>
 			<div className='absolute rounded-xl z-10 h-full w-full bg-gradient-to-t from-slate-800 from-0% via-slate-800/90 via-40% to-transparent to-100%' />
 			<div
-				className={`flex flex-col items-start p-4 gap-1 absolute bottom-0 left-0 z-20 ${className}`}
+				className={cn(
+					`flex flex-col items-start p-4 gap-1 absolute bottom-0 left-0 z-20`,
+					className
+				)}
 			>
 				{aboveTextMarkup}
 				<p className='font-bold text-xs sm:text-sm uppercase text-slate-300'>

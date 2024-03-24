@@ -49,7 +49,7 @@ const LINKS_CONTENT = [
 
 export const ExternalLinks = () => {
 	return (
-		<div className='grid grid-cols-6 sm:grid-cols-12 gap-4 h-fit'>
+		<div className='grid grid-cols-6 sm:grid-cols-12 gap-4'>
 			{LINKS_CONTENT.map((content) => (
 				<Card.Root
 					className='col-span-3 sm:col-span-3 h-fit'
