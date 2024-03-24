@@ -52,7 +52,7 @@ export const ExternalLinks = () => {
 		<div className='grid grid-cols-6 sm:grid-cols-12 gap-4'>
 			{LINKS_CONTENT.map((content) => (
 				<Card.Root
-					className='col-span-3 sm:col-span-3'
+					className='col-span-3 sm:col-span-3 h-fit'
 					linkProps={content.linkProps}
 					isExternal
 					key={content.title}
