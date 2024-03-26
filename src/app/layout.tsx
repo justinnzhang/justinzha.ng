@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Urbanist } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { Footer, Navbar } from '@/components';
 import { baseMetadata } from '@/constants';
@@ -39,7 +41,9 @@ export default function RootLayout({
 				</Suspense>
 				<Footer />
 				<Analytics />
+				<SpeedInsights />
 			</body>
+			<GoogleAnalytics gaId={process.env.GOOGLE_TAG_ID!} />
 		</html>
 	);
 }
