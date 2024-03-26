@@ -74,7 +74,9 @@ export const workContent: GenerateCardProps[] = [
 		root: {
 			className: 'col-span-1 sm:col-span-7',
 			minHeightClass,
-			linkProps: { href: 'https://www.youtube.com/watch?v=FHqo3aYjCw8&t=1s' },
+			linkProps: {
+				href: 'https://www.youtube.com/watch?v=FHqo3aYjCw8&t=1s',
+			},
 			isExternal: true,
 		},
 		content: {
@@ -96,7 +98,7 @@ export const workContent: GenerateCardProps[] = [
 		root: {
 			className: 'col-span-1 sm:col-span-3',
 			minHeightClass,
-			linkProps: { href: 'https://hackwestern.com' },
+			linkProps: { href: generateUtm('https://hackwestern.com') },
 			isExternal: true,
 		},
 		content: {
@@ -116,7 +118,7 @@ export const workContent: GenerateCardProps[] = [
 		root: {
 			className: 'col-span-1 sm:col-span-4',
 			minHeightClass,
-			linkProps: { href: 'https://wrapped.justinzha.ng' },
+			linkProps: { href: generateUtm('https://wrapped.justinzha.ng') },
 			isExternal: true,
 		},
 		content: {
