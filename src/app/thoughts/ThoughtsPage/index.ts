@@ -1,1 +1,0 @@
-export { ThoughtsPage } from './ThoughtsPage';

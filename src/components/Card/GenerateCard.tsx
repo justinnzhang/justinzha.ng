@@ -1,8 +1,8 @@
-import { Card } from '.';
+import { Card, CardMedia, CardContent } from './Card';
 import { BaseCardProps, CardContentProps, CardMediaProps } from './types';
 
 export interface GenerateCardProps {
-	id: string;
+	id?: string;
 	root: Omit<BaseCardProps, 'children'>;
 	media?: CardMediaProps;
 	content?: CardContentProps;
@@ -15,15 +15,15 @@ export const GenerateCard = ({
 	content,
 	children,
 }: GenerateCardProps) => {
-	const mediaMarkup = media && <Card.Media {...media} />;
+	const mediaMarkup = media && <CardMedia {...media} />;
 
-	const contentMarkup = content && <Card.Content {...content} />;
+	const contentMarkup = content && <CardContent {...content} />;
 
 	return (
-		<Card.Root {...root}>
+		<Card {...root}>
 			{mediaMarkup}
 			{contentMarkup}
 			{children}
-		</Card.Root>
+		</Card>
 	);
 };

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { AboutPage } from './AboutPage';
+import { AboutPage } from '@/components/page-containers';
 import { baseMetadata } from '@/constants';
 
 export const metadata: Metadata = {

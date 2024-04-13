@@ -37,7 +37,7 @@ export const baseMetadata = {
 		images: {
 			url: `https://justinzha.ng/${DEFAULT_OG_IMAGE}`,
 			alt: 'Welcome to my corner of the internet',
-		}, // Must be an absolute URL
+		},
 	},
 	category: 'Personal Site',
 	metadataBase: new URL('https://justinzha.ng'),
