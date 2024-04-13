@@ -1,4 +1,5 @@
-import { Card } from '@/components';
+import { Card, CardMedia, CardContent } from '@/components';
+import { cn } from '@/lib/utils';
 
 const LINKS_CONTENT = [
 	{
@@ -9,7 +10,7 @@ const LINKS_CONTENT = [
 		},
 		isExternal: true,
 		media: {
-			src: '/static/images/github-card-bg.png',
+			src: '/static/images/external-links/github-card-bg.png',
 		},
 	},
 	{
@@ -20,7 +21,7 @@ const LINKS_CONTENT = [
 		},
 		isExternal: true,
 		media: {
-			src: '/static/images/linkedin-card-bg.png',
+			src: '/static/images/external-links/linkedin-card-bg.png',
 		},
 	},
 	{
@@ -31,7 +32,7 @@ const LINKS_CONTENT = [
 		},
 		isExternal: true,
 		media: {
-			src: '/static/images/threads-card-bg.png',
+			src: '/static/images/external-links/threads-card-bg.png',
 		},
 	},
 	{
@@ -42,7 +43,7 @@ const LINKS_CONTENT = [
 		},
 		isExternal: true,
 		media: {
-			src: '/static/images/youtube-card-bg.png',
+			src: '/static/images/external-links/youtube-card-bg.png',
 		},
 	},
 ];
@@ -51,24 +52,26 @@ export const ExternalLinks = () => {
 	return (
 		<div className='grid grid-cols-6 sm:grid-cols-12 gap-4'>
 			{LINKS_CONTENT.map((content) => (
-				<Card.Root
+				<Card
 					className='col-span-3 sm:col-span-3 h-fit'
 					linkProps={content.linkProps}
 					isExternal
 					key={content.title}
 					minHeightClass='min-h-[125px]'
 				>
-					<Card.Media
+					<CardMedia
 						src={content.media.src}
 						alt={content.title}
-						className='rotate-12 scale-150 group-hover:blur-[2px]'
+						className={cn('rotate-12 scale-150 group-hover:blur-[2px]', {
+							['bg-slate-500']: content.title === 'GITHUB',
+						})}
 					/>
-					<Card.Content
+					<CardContent
 						title={content.title}
 						body={content.body}
 						className='text-center'
 					/>
-				</Card.Root>
+				</Card>
 			))}
 		</div>
 	);

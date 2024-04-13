@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, ExternalLinks } from '@/components';
+import { Card, CardMedia, CardContent, ExternalLinks } from '@/components';
 import { Heading } from '@/components/Heading';
 import { ABOUT_CONTENT } from './content';
 
@@ -29,14 +29,14 @@ const VARIANTS = {
 export const AboutPage = () => {
 	return (
 		<motion.div
-			className='flex flex-col justify-start max-w-[1000px] w-full h-full sm:pt-12 gap-2 sm:gap-4'
+			className='flex flex-col justify-start max-w-[1000px] w-full h-full sm:pt-12 gap-2 sm:gap-4 sm:px-4'
 			variants={VARIANTS}
 			initial='initial'
 			animate='animate'
 			exit='exit'
 		>
 			<div className='px-4 sm:px-0 pt-8 sm:pt-2'>
-				<Heading size={'h1'}>About me</Heading>
+				<Heading variant='h1'>About me</Heading>
 			</div>
 			<div className='flex flex-col sm:flex-row gap-4 sm:gap-5'>
 				<div className='flex flex-col gap-4 w-full sm:w-1/3 px-4 sm:px-0'>
@@ -45,12 +45,12 @@ export const AboutPage = () => {
 						intersection of technology, business, and design.
 					</p>
 					<p className='font-medium text-lg'>
-						Today, I'm finding purpose in combining my love for all these
+						Today, I&apos;m finding purpose in combining my love for all these
 						different fields to create meaningful products and experiences.
 					</p>
 					<p className='font-medium text-lg'>
-						Feel free to reach out on my links or shoot me an email below, I'd
-						love to get in touch!
+						Feel free to reach out on my links or shoot me an email below,
+						I&apos;d love to get in touch!
 					</p>
 					<Button variant='outline' className='w-full' asChild>
 						<Link href={`mailto:${PUBLIC_EMAIL}`}>
@@ -63,22 +63,22 @@ export const AboutPage = () => {
 					<div className='overflow-y-auto pb-4 sm:pb-4 sm:px-0'>
 						<div className='grid sm:grid-cols-12 gap-4 auto-cols-[20rem] sm:auto-cols-auto grid-flow-col sm:grid-flow-row first:ml-4 last:mr-4 sm:first:ml-0 sm:last:mr-0'>
 							{ABOUT_CONTENT.map((content) => (
-								<Card.Root
+								<Card
 									className={content.className}
 									key={content.id}
 									linkProps={content?.linkProps}
 									isExternal={content?.isExternal}
 								>
-									<Card.Media src={content.media.src} alt={content.media.alt} />
-									<Card.Content title={content.title} body={content.body} />
-								</Card.Root>
+									<CardMedia src={content.media.src} alt={content.media.alt} />
+									<CardContent title={content.title} body={content.body} />
+								</Card>
 							))}
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className='flex flex-col gap-2 sm:gap-4 p-4 sm:p-0'>
-				<Heading size='h2'>Find me on the internet</Heading>
+				<Heading variant='h2'>Find me on the internet</Heading>
 				<ExternalLinks />
 			</div>
 		</motion.div>

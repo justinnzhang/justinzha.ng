@@ -22,7 +22,7 @@ const VARIANTS = {
 		},
 	},
 	hover: {
-		scale: 0.98,
+		scale: 0.99,
 		transition: { duration: 0.1 },
 	},
 };
@@ -34,7 +34,7 @@ const LINK_VARIANTS = {
 	},
 };
 
-export const BaseCard = ({
+export const Card = ({
 	children,
 	className,
 	linkProps,
@@ -42,7 +42,7 @@ export const BaseCard = ({
 	minHeightClass = 'min-h-[200px] sm:min-h-[220px]',
 }: BaseCardProps) => {
 	const computedClassName = cn(
-		`flex flex-col border-[1px] border-slate-700 rounded-xl bg-slate-900 relative h-full group overflow-hidden`,
+		`flex flex-col border-[1px] border-border rounded-xl bg-slate-100 dark:bg-slate-900 relative h-full group overflow-hidden`,
 		className,
 		minHeightClass
 	);
@@ -56,7 +56,8 @@ export const BaseCard = ({
 	}
 
 	const { href, alt } = linkProps;
-	const iconClassName = `text-slate-100 absolute top-4 left-4 w-4 h-4 z-50`;
+	const iconClassName = `text-foreground absolute top-4 left-4 w-4 h-4 z-50`;
+	const bgGradientClass = `after:content-[''] after:bg-gradient-to-r after:rotate-45 after:from-background after:to-transparent after:position-absolute after:top-0 after:left-0 after:w-20 after:h-20 after:z-40 after:scale-150 after:-translate-x-1/2 after:-translate-y-1/2`;
 
 	if (isExternal) {
 		return (
@@ -65,7 +66,11 @@ export const BaseCard = ({
 				target='_blank'
 				rel='noopener noreferrer'
 				title={alt}
-				className={cn(`group cursor-pointer`, computedClassName)}
+				className={cn(
+					`group cursor-pointer`,
+					computedClassName,
+					bgGradientClass
+				)}
 				variants={VARIANTS}
 				{...LINK_VARIANTS}
 			>
@@ -129,15 +134,17 @@ export const CardContent = ({
 	} = ctaProps || {};
 
 	const ctaMarkup = ctaProps && (
-		<div className='flex flex-row gap-1 items-center justify-center text-slate-300'>
-			<p className='text-xs font-bold uppercase text-slate-300'>{text}</p>
+		<div className='flex flex-row gap-1 items-center justify-center text-slate-800 dark:text-slate-300'>
+			<p className='text-xs font-bold uppercase text-slate-800 dark:text-slate-300'>
+				{text}
+			</p>
 			{iconRight}
 		</div>
 	);
 
 	return (
 		<>
-			<div className='absolute rounded-xl z-10 h-full w-full bg-gradient-to-t from-slate-800 from-0% via-slate-800/90 via-40% to-transparent to-100%' />
+			<div className='absolute rounded-xl z-10 bottom-0 h-4/5 w-full bg-gradient-to-t from-slate-200 dark:from-slate-800 from-0% via-slate-100 dark:via-slate-800/90 via-30% to-transparent to-100%' />
 			<div
 				className={cn(
 					`flex flex-col items-start p-4 gap-1 absolute bottom-0 left-0 z-20`,
@@ -145,21 +152,21 @@ export const CardContent = ({
 				)}
 			>
 				{aboveTextMarkup}
-				<p className='font-bold text-xs sm:text-sm uppercase text-slate-300'>
+				<motion.p
+					className='font-bold text-xs sm:text-sm uppercase text-foreground'
+					variants={VARIANTS}
+				>
 					{title}
-				</p>
-				<p className='font-medium text-md sm:text-lg text-slate-100 line-clamp-3'>
+				</motion.p>
+				<motion.p
+					className='font-medium text-md sm:text-lg text-foreground line-clamp-3'
+					variants={VARIANTS}
+				>
 					{body}
-				</p>
+				</motion.p>
 				{ctaMarkup}
 				{belowTextMarkup}
 			</div>
 		</>
 	);
-};
-
-export const Card = {
-	Root: BaseCard,
-	Content: CardContent,
-	Media: CardMedia,
 };

@@ -10,6 +10,8 @@ import { Suspense } from 'react';
 
 import './custom.css';
 import './globals.css';
+import { ThemeProvider } from '@/components/Theme';
+import { cn } from '@/lib/utils';
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
@@ -25,6 +27,12 @@ export const viewport: Viewport = {
 	],
 };
 
+const AFTER_GRADIENT =
+	'after:absolute after:h-1/2 after:max-h-[700px] after:w-screen after:rounded-full after:top-16 after:right-16 after:bg-gradient-to-r after:from-transparent after:to-indigo-300 dark:after:to-indigo-950 after:blur-3xl after:rotate-12 after:z-[-1]';
+
+const BASE_CLASSES =
+	'flex flex-col w-full min-h-screen items-center pb-[100px]';
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -33,15 +41,26 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${urbanist.className} bg-gradient-to-b from-slate-950 to-slate-900 flex flex-col w-full min-h-screen items-center pb-[100px] bg-slate-950 after:absolute after:h-1/2 after:max-h-[700px] after:w-screen after:rounded-full after:top-16 after:right-16 after:bg-gradient-to-r after:from-transparent after:to-indigo-950 after:blur-3xl after:rotate-12 after:z-[-1]`}
+				className={cn(
+					`${urbanist.className} bg-gradient-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950`,
+					AFTER_GRADIENT,
+					BASE_CLASSES
+				)}
 			>
-				<Suspense fallback={null}>{children}</Suspense>
-				<Suspense fallback={null}>
-					<Navbar />
-				</Suspense>
-				<Footer />
-				<Analytics />
-				<SpeedInsights />
+				<ThemeProvider
+					attribute='class'
+					defaultTheme='system'
+					enableSystem
+					disableTransitionOnChange
+				>
+					<Suspense fallback={null}>{children}</Suspense>
+					<Footer />
+					<Suspense fallback={null}>
+						<Navbar />
+					</Suspense>
+					<Analytics />
+					<SpeedInsights />
+				</ThemeProvider>
 			</body>
 			<GoogleAnalytics gaId={process.env.GOOGLE_TAG_ID!} />
 		</html>

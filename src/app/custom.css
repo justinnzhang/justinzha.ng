@@ -4,7 +4,7 @@
 
 @layer base {
 	p {
-		@apply text-slate-50;
+		@apply text-foreground;
 	}
 
 	.home-page-container {

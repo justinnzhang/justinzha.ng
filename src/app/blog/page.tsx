@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import { baseMetadata } from '@/constants';
 
-import { ThoughtsPage } from './ThoughtsPage';
+import { BlogPage } from '@/components/page-containers/blog';
 
 export const metadata: Metadata = {
 	...baseMetadata,
-	title: 'Thoughts',
+	title: 'Blog',
 };
 
 export default function Page() {
-	return <ThoughtsPage />;
+	return <BlogPage />;
 }

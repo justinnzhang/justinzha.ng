@@ -1,47 +1,41 @@
+import { forwardRef } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
 import { Aleo } from 'next/font/google';
-import { HTMLAttributes } from 'react';
-
 const aleo = Aleo({ subsets: ['latin'] });
 
-interface Props extends HTMLAttributes<HTMLHeadingElement> {
-	size: HeadingSizes;
-	children: React.ReactNode;
-}
+const headingVariants = cva('slate-900 dark:slate-100', {
+	variants: {
+		variant: {
+			h1: 'scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl',
+			h2: 'scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0',
+			h3: 'scroll-m-20 text-2xl font-semibold tracking-tight',
+			h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
+		},
+	},
+	defaultVariants: {
+		variant: 'h1',
+	},
+});
 
-const commonStyles = `text-white`;
+export interface HeadingProps
+	extends React.HTMLAttributes<HTMLHeadingElement>,
+		VariantProps<typeof headingVariants> {}
 
-const styles = {
-	h1: `${commonStyles} text-3xl md:text-4xl font-extrabold tracking-tight lg:text-5xl`,
-	h2: `${commonStyles} text-2xl md:text-3xl font-semibold tracking-tight first:mt-0`,
-	h3: `${commonStyles} text-xl md:text-2xl font-semibold tracking-tight`,
-	h4: `${commonStyles} text-lg md:text-xl font-semibold tracking-tight`,
-};
+const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
+	({ variant = 'h1', className, ...props }, ref) => {
+		const Comp = variant ?? 'h1';
 
-export const Heading = ({ size, children, ...rest }: Props) => {
-	switch (size) {
-		case 'h1':
-			return (
-				<h1 className={styles[size]} {...rest}>
-					{children}
-				</h1>
-			);
-		case 'h2':
-			return (
-				<h2 className={styles[size]} {...rest}>
-					{children}
-				</h2>
-			);
-		case 'h3':
-			return (
-				<h3 className={styles[size]} {...rest}>
-					{children}
-				</h3>
-			);
-		case 'h4':
-			return (
-				<h4 className={styles[size]} {...rest}>
-					{children}
-				</h4>
-			);
+		return (
+			<Comp
+				className={cn(headingVariants({ variant, className }), aleo.className)}
+				ref={ref}
+				{...props}
+			/>
+		);
 	}
-};
+);
+
+Heading.displayName = 'Heading';
+
+export { Heading, headingVariants };
