@@ -5,10 +5,11 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ComputerIcon, ExternalLink } from 'lucide-react';
+import { ROUTES } from '@/constants';
 
 export const BlogPage = () => {
 	return (
-		<main className='flex flex-col flex-wrap gap-8 max-w-5xl w-full p-4 pt-12'>
+		<div className='flex flex-col flex-wrap gap-8 max-w-5xl w-full p-4 pt-12 mx-auto'>
 			<Heading>Blog</Heading>
 			<div className='grid grid-flow-row-dense grid-cols-12 gap-8'>
 				<div className='flex flex-col gap-4 col-span-12 sm:col-span-6'>
@@ -47,6 +48,6 @@ export const BlogPage = () => {
 					</Button>
 				</div>
 			</div>
-		</main>
+		</div>
 	);
 };

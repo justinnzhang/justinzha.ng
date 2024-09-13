@@ -62,7 +62,7 @@ export const ExternalLinks = () => {
 					<CardMedia
 						src={content.media.src}
 						alt={content.title}
-						className={cn('rotate-12 scale-150 group-hover:blur-[2px]', {
+						className={cn('rotate-12 scale-150 group-hover:blur-[1px]', {
 							['bg-slate-500']: content.title === 'GITHUB',
 						})}
 					/>

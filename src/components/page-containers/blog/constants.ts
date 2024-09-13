@@ -1,4 +1,3 @@
-import { GenerateCardProps } from '@/components/Card/GenerateCard';
 import { generateUtm } from '@/lib';
 
 export const PublicToolsMeta = {
