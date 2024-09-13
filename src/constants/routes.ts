@@ -29,9 +29,15 @@ export const ROUTES: RouteMetadata = {
 		priority: 0.8,
 		changeFrequency: 'monthly',
 	},
-	DOCS: {
+	BLOG: {
 		slug: '/blog',
 		title: 'Blog',
+		priority: 0.5,
+		changeFrequency: 'monthly',
+	},
+	BLOG_MOVING: {
+		slug: '/blog/moving',
+		title: 'Moving to the USA',
 		priority: 0.5,
 		changeFrequency: 'monthly',
 	},

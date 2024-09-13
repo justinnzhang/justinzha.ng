@@ -29,7 +29,7 @@ const VARIANTS = {
 export const AboutPage = () => {
 	return (
 		<motion.div
-			className='flex flex-col justify-start max-w-[1000px] w-full h-full sm:pt-12 gap-2 sm:gap-4 sm:px-4'
+			className='flex flex-col justify-start max-w-[1000px] w-full h-full sm:pt-12 gap-2 sm:gap-4 sm:px-4 mx-auto'
 			variants={VARIANTS}
 			initial='initial'
 			animate='animate'
