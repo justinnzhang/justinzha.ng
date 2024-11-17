@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { MotionImage, MotionLink } from '../utilities';
 import { ExternalLink, Link, MoveRight } from 'lucide-react';
 

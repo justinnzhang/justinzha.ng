@@ -4,7 +4,7 @@ import { Card, CardMedia, CardContent, ExternalLinks } from '@/components';
 import { Heading } from '@/components/Heading';
 import { ABOUT_CONTENT } from './content';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { PUBLIC_EMAIL } from '@/constants';

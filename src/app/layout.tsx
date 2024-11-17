@@ -35,11 +35,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body
-				className={cn(
-					`${urbanist.className} bg-gradient-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`
-				)}
-			>
+			<body>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
@@ -47,7 +43,11 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<Suspense fallback={null}>
-						<main>
+						<main
+							className={cn(
+								`${urbanist.className} bg-gradient-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`
+							)}
+						>
 							{children}
 							<Suspense fallback={null}>
 								<Navbar />

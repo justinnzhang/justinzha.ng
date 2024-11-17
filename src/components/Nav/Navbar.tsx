@@ -114,21 +114,22 @@ export const Navbar = () => {
 				</DrawerTrigger>
 				<ThemeToggleSection />
 			</div>
-			<DrawerContent className='bg-slate-800 border-slate-900 pb-8'>
+			<DrawerContent className='bg-slate-100 dark:bg-slate-800 borderdark:border-slate-900 pb-8'>
 				<DrawerHeader>
 					<div className='flex flex-col items-start justify-start text-left'>
 						<p className='text-muted-foreground text-sm'>Current Page</p>
 						<p className='font-medium'>{currentPageName}</p>
 					</div>
+				</DrawerHeader>
+				<div className='flex flex-col px-4'>
 					{NAV_ITEMS.map((el) => (
 						<DrawerClose className='' asChild key={`${el.id}-mobile`}>
 							<Link
 								href={el.href}
 								className={cn(
-									`flex flex-row justify-start items-center text-secondary-foreground px-1 py-4 rounded-full overflow-clip cursor-pointer transition-colors`,
+									`flex flex-row justify-start items-center text-secondary-foreground py-3 rounded-full overflow-clip cursor-pointer transition-colors`,
 									{
-										['font-bold text-slate-100 bg-primary dark:bg-secondary']:
-											pathname === el.href,
+										['font-bold']: pathname === el.href,
 									}
 								)}
 							>
@@ -137,7 +138,7 @@ export const Navbar = () => {
 							</Link>
 						</DrawerClose>
 					))}
-				</DrawerHeader>
+				</div>
 				<DrawerFooter>
 					<DrawerClose className='w-full' asChild>
 						<Button variant='outline'>Close</Button>
