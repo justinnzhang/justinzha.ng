@@ -1,6 +1,6 @@
 'use client';
 
-import { m, LazyMotion, domAnimation } from 'framer-motion';
+import { m, LazyMotion, domAnimation } from 'motion/react';
 
 import { workContent } from './content';
 import { GenerateCard } from '@/components/Card';
