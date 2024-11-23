@@ -1,1 +1,1 @@
-export const ASSETS_PREFIX = `/static/images`;
+export const ASSETS_PREFIX = `https://static.justinzha.ng`;

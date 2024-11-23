@@ -1,5 +1,6 @@
 import { Card, CardMedia, CardContent } from '@/components';
 import { cn } from '@/lib/utils';
+import { getAssetUrl } from '@/utils';
 
 const LINKS_CONTENT = [
 	{
@@ -10,7 +11,7 @@ const LINKS_CONTENT = [
 		},
 		isExternal: true,
 		media: {
-			src: '/static/images/external-links/github-card-bg.png',
+			src: getAssetUrl('external-links/github-card-bg.png'),
 		},
 	},
 	{
@@ -21,7 +22,7 @@ const LINKS_CONTENT = [
 		},
 		isExternal: true,
 		media: {
-			src: '/static/images/external-links/linkedin-card-bg.png',
+			src: getAssetUrl('external-links/linkedin-card-bg.png'),
 		},
 	},
 	{
@@ -32,7 +33,7 @@ const LINKS_CONTENT = [
 		},
 		isExternal: true,
 		media: {
-			src: '/static/images/external-links/threads-card-bg.png',
+			src: getAssetUrl('external-links/threads-card-bg.png'),
 		},
 	},
 	{
@@ -43,7 +44,7 @@ const LINKS_CONTENT = [
 		},
 		isExternal: true,
 		media: {
-			src: '/static/images/external-links/youtube-card-bg.png',
+			src: getAssetUrl('external-links/youtube-card-bg.png'),
 		},
 	},
 ];
