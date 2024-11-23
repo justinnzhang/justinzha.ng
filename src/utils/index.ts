@@ -1,1 +1,1 @@
-export { getAssetsUrl } from './getAssetsUrl';
+export { getAssetUrl } from './getAssetsUrl';

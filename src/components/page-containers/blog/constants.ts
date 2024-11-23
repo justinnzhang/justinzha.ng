@@ -1,4 +1,5 @@
 import { generateUtm } from '@/lib';
+import { getAssetUrl } from '@/utils';
 
 export const PublicToolsMeta = {
 	linkProps: { href: generateUtm('https://tools.justinzha.ng') },
@@ -10,7 +11,7 @@ export const PublicToolsMeta = {
 		},
 	},
 	media: {
-		src: '/static/images/blog/public-tools-og.jpeg',
+		src: getAssetUrl('blog/public-tools-og.jpeg'),
 		alt: 'Public Tools',
 		priority: 'high',
 	},
