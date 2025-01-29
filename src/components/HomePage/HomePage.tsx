@@ -21,13 +21,13 @@ export const HomePage = () => {
 					</p>
 					<div className='flex flex-row gap-4 sm:w-1/3'>
 						<Button variant='outline' className='w-full' asChild>
-							<Link href={`mailto:${PUBLIC_EMAIL}`}>
+							<Link href={`mailto:${PUBLIC_EMAIL}`} target="_blank">
 								<Mail className='mr-2 h-4 w-4' />
 								Email me
 							</Link>
 						</Button>
 						<Button variant='default' className='w-full' asChild>
-							<Link href={PUBLIC_RESUME_LINK}>
+							<Link href={PUBLIC_RESUME_LINK} target="_blank">
 								<Download className='mr-2 h-4 w-4' />
 								Resume
 							</Link>
