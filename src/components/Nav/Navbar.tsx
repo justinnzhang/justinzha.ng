@@ -88,7 +88,6 @@ export const Navbar = () => {
 									showActiveState,
 								['before:content-[""] before:w-8 before:h-[4px] before:bg-slate-500 dark:before:bg-slate-600 before:absolute before:bottom-2 before:rounded-xl']:
 									isActiveNestedRoute(pathname, el.href),
-								['rounded-l-full rounded-r-md']: index === 0,
 							}
 						)}
 					>

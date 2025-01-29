@@ -7,8 +7,8 @@ import { ABOUT_CONTENT } from './content';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { PUBLIC_EMAIL } from '@/constants';
-import { Mail } from 'lucide-react';
+import { PUBLIC_EMAIL, PUBLIC_RESUME_LINK } from '@/constants';
+import { Mail, Download } from 'lucide-react';
 
 const VARIANTS = {
 	initial: {
@@ -52,12 +52,20 @@ export const AboutPage = () => {
 						Feel free to reach out on my links or shoot me an email below,
 						I&apos;d love to get in touch!
 					</p>
-					<Button variant='outline' className='w-full' asChild>
-						<Link href={`mailto:${PUBLIC_EMAIL}`}>
-							<Mail className='mr-2 h-4 w-4' />
-							Email me
-						</Link>
-					</Button>
+					<div className='flex flex-col gap-2'>
+						<Button variant='outline' className='w-full' asChild>
+							<Link href={`mailto:${PUBLIC_EMAIL}`}>
+								<Mail className='mr-2 h-4 w-4' />
+								Email me
+							</Link>
+						</Button>
+						<Button variant='default' className='w-full' asChild>
+							<Link href={PUBLIC_RESUME_LINK}>
+								<Download className='mr-2 h-4 w-4' />
+								Resume
+							</Link>
+						</Button>
+					</div>
 				</div>
 				<div className='flex flex-col gap-4 w-full sm:w-2/3'>
 					<div className='overflow-y-auto pb-4 sm:pb-4 sm:px-0'>
