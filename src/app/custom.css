@@ -1,12 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 @layer base {
-	p {
-		@apply text-foreground;
-	}
-
 	.home-page-container {
 		:nth-child(4n + 1) {
 			@apply col-span-12 sm:col-span-8;

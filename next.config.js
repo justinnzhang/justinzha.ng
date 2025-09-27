@@ -1,4 +1,5 @@
 const withMDX = require('@next/mdx')();
+const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,6 +11,9 @@ const nextConfig = {
 				hostname: 'static.justinzha.ng',
 			},
 		],
+	},
+	turbopack: {
+		root: path.join(__dirname, '..'),
 	},
 };
 
