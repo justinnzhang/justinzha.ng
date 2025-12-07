@@ -5,9 +5,7 @@ export const Footer = () => {
 				<p className='text-muted-foreground'>Created with a lot of love</p>
 			</div>
 			<div className='flex flex-col justify-end'>
-				<p className='text-muted-foreground'>
-					© {new Date().getFullYear()} Justin Zhang
-				</p>
+				<p className='text-muted-foreground'>© 2025 Justin Zhang</p>
 			</div>
 		</footer>
 	);
