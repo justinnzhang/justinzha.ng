@@ -1,3 +1,3 @@
-## My space on the internet
+# Core Justin Zhang Sites
 
-Here's my new landing site :)
+- Mono-repo design that builds each folder as expected
