@@ -1,8 +1,8 @@
 import { type MetadataRoute } from 'next';
-import { headers, type UnsafeUnwrappedHeaders } from 'next/headers';
+import { headers } from 'next/headers';
 
-export default function robots(): MetadataRoute.Robots {
-	const headersList = (headers() as unknown as UnsafeUnwrappedHeaders);
+export default async function robots(): Promise<MetadataRoute.Robots> {
+	const headersList = await headers();
 	const domain = headersList.get('host')!;
 
 	return {
