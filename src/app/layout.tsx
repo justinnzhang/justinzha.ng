@@ -2,7 +2,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
-import { Urbanist } from 'next/font/google';
+import { Figtree } from 'next/font/google';
 
 import { Footer, Navbar } from '@/components';
 import { Toaster } from '@/components/ui/sonner';
@@ -13,7 +13,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/Theme';
 import { cn } from '@/lib/utils';
 
-const urbanist = Urbanist({ subsets: ['latin'] });
+const figtree = Figtree({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = baseMetadata;
 
@@ -33,7 +33,11 @@ export default function RootLayout({
 	const googleAnalyticsId = process.env.GOOGLE_TAG_ID;
 
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html
+			lang="en"
+			suppressHydrationWarning
+			className={cn('font-sans', 'font-sans', figtree.variable)}
+		>
 			<body>
 				<ThemeProvider
 					attribute="class"
@@ -43,7 +47,7 @@ export default function RootLayout({
 				>
 					<main
 						className={cn(
-							`${urbanist.className} bg-linear-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`,
+							`bg-linear-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`,
 						)}
 					>
 						{children}

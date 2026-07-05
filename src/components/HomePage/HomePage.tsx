@@ -1,6 +1,6 @@
 import { Download, Mail } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { PUBLIC_EMAIL, PUBLIC_RESUME_LINK } from '@/constants';
 import { ExternalLinks } from '../ExternalLinks';
 import { Heading } from '../Heading';
@@ -19,18 +19,23 @@ export const HomePage = () => {
 						of!
 					</p>
 					<div className="flex flex-row gap-4 sm:w-1/3">
-						<Button variant="outline" className="w-full" asChild>
-							<Link href={`mailto:${PUBLIC_EMAIL}`} target="_blank">
-								<Mail className="mr-2 h-4 w-4" />
-								Email me
-							</Link>
-						</Button>
-						<Button variant="default" className="w-full" asChild>
-							<Link href={PUBLIC_RESUME_LINK} target="_blank">
-								<Download className="mr-2 h-4 w-4" />
-								Resume
-							</Link>
-						</Button>
+						<Link
+							className={buttonVariants({ variant: 'outline', size: 'lg' })}
+							href={`mailto:${PUBLIC_EMAIL}`}
+							target="_blank"
+						>
+							<Mail className="mr-2 h-4 w-4" />
+							Email me
+						</Link>
+
+						<Link
+							className={buttonVariants({ variant: 'default', size: 'lg' })}
+							href={PUBLIC_RESUME_LINK}
+							target="_blank"
+						>
+							<Download className="mr-2 h-4 w-4" />
+							Resume
+						</Link>
 					</div>
 				</div>
 				<HomeWorkCards />
