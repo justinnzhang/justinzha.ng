@@ -1,25 +1,25 @@
 {
 	"workbench.colorCustomizations": {
-		"activityBar.activeBackground": "#174bc6",
+		"activityBar.activeBackground": "#1a54dd",
 		"activityBar.activeBorder": "#28d740",
-		"activityBar.background": "#174bc6",
+		"activityBar.background": "#1a54dd",
 		"activityBar.foreground": "#e7e7e7",
 		"activityBar.inactiveForeground": "#e7e7e799",
-		"activityBarBadge.background": "#eb5481",
+		"activityBarBadge.background": "#ee7096",
 		"activityBarBadge.foreground": "#15202b",
-		"sash.hoverBorder": "#174bc6",
-		"statusBar.background": "#123a98",
+		"sash.hoverBorder": "#1a54dd",
+		"statusBar.background": "#1543af",
 		"statusBar.foreground": "#e7e7e7",
-		"statusBarItem.hoverBackground": "#174bc6",
-		"statusBarItem.remoteBackground": "#123a98",
+		"statusBarItem.hoverBackground": "#1a54dd",
+		"statusBarItem.remoteBackground": "#1543af",
 		"statusBarItem.remoteForeground": "#e7e7e7",
-		"titleBar.activeBackground": "#123a98",
+		"titleBar.activeBackground": "#1543af",
 		"titleBar.activeForeground": "#e7e7e7",
-		"titleBar.inactiveBackground": "#123a9899",
+		"titleBar.inactiveBackground": "#1543af99",
 		"titleBar.inactiveForeground": "#e7e7e799",
 		"commandCenter.border": "#e7e7e799"
 	},
-	"peacock.color": "#123a98",
+	"peacock.color": "#1543af",
 	"css.customData": [".vscode/tailwind.json"],
 	"files.associations": {
 		"*.css": "tailwindcss"
@@ -29,5 +29,8 @@
 		"className",
 		"computedClassName",
 		".*Styles"
-	]
+	],
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit"
+	}
 }

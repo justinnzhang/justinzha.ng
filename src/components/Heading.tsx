@@ -1,7 +1,8 @@
-import { forwardRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
 import { Aleo } from 'next/font/google';
+import { forwardRef } from 'react';
+import { cn } from '@/lib/utils';
+
 const aleo = Aleo({ subsets: ['latin'] });
 
 export const HEADING_STYLES = {
@@ -37,7 +38,7 @@ const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
 				{...props}
 			/>
 		);
-	}
+	},
 );
 
 Heading.displayName = 'Heading';

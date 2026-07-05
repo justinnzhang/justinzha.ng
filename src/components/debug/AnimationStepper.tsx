@@ -22,15 +22,15 @@ export const AnimationStepper = ({ stateValue, setState }: Props) => {
 	};
 
 	return (
-		<div className='fixed right-0 bottom-0 m-4 bg-slate-100 border-slate-100 p-4 rounded z-[100]'>
-			<p className='text-sm'>Current Animation State: {stateValue}</p>
-			<Button onClick={resetAnimation} variant='secondary'>
+		<div className="fixed right-0 bottom-0 m-4 bg-slate-100 border-slate-100 p-4 rounded z-[100]">
+			<p className="text-sm">Current Animation State: {stateValue}</p>
+			<Button onClick={resetAnimation} variant="secondary">
 				Reset Animation
 			</Button>
-			<Button onClick={incrementAnimation} variant='secondary'>
+			<Button onClick={incrementAnimation} variant="secondary">
 				Next Animation
 			</Button>
-			<Button onClick={decrementAnimation} variant='secondary'>
+			<Button onClick={decrementAnimation} variant="secondary">
 				Prev Animation
 			</Button>
 		</div>

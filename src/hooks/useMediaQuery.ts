@@ -19,7 +19,7 @@ const IS_SERVER = typeof window === 'undefined';
  */
 export function useMediaQuery(
 	query: string,
-	options: boolean = false
+	options: boolean = false,
 ): boolean {
 	const defaultValue = options;
 	const initializeWithValue = undefined;

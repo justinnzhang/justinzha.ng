@@ -34,18 +34,18 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en' suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning>
 			<body>
 				<ThemeProvider
-					attribute='class'
-					defaultTheme='system'
+					attribute="class"
+					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange
 				>
 					<Suspense fallback={null}>
 						<main
 							className={cn(
-								`${urbanist.className} bg-gradient-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`
+								`${urbanist.className} bg-gradient-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`,
 							)}
 						>
 							{children}
@@ -53,7 +53,7 @@ export default function RootLayout({
 								<Navbar />
 							</Suspense>
 							<Footer />
-							<Toaster position='top-right' />
+							<Toaster position="top-right" />
 						</main>
 					</Suspense>
 					<Analytics />

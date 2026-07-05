@@ -2,11 +2,15 @@
 	"name": "justinzha.ng",
 	"version": "1.0.0",
 	"private": true,
+	"packageManager": "bun@1.3.14",
 	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
+		"dev": "bun run --bun next dev --turbopack --hostname 0.0.0.0",
+		"build": "bun run --bun next build",
+		"start": "bun run --bun next start",
+		"lint": "bun run --bun biome lint .",
+		"format": "bun run --bun biome format --write .",
+		"check": "bun run --bun biome check .",
+		"typecheck": "bun run --bun tsc --noEmit"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^5.2.2",
@@ -36,6 +40,7 @@
 		"zod": "^4.3.6"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "2.5.2",
 		"@types/node": "^22.9.0",
 		"@types/react": "19.2.14",
 		"@types/react-dom": "19.2.3",

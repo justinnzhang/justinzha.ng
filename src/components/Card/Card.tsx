@@ -44,7 +44,7 @@ export const Card = ({
 	const computedClassName = cn(
 		`flex flex-col border-[1px] border-border rounded-xl bg-slate-100 dark:bg-slate-900 relative h-full group overflow-hidden`,
 		className,
-		minHeightClass
+		minHeightClass,
 	);
 
 	if (!linkProps) {
@@ -63,13 +63,13 @@ export const Card = ({
 		return (
 			<motion.a
 				href={href}
-				target='_blank'
-				rel='noopener noreferrer'
+				target="_blank"
+				rel="noopener noreferrer"
 				title={alt}
 				className={cn(
 					`group cursor-pointer`,
 					computedClassName,
-					bgGradientClass
+					bgGradientClass,
 				)}
 				variants={VARIANTS}
 				{...LINK_VARIANTS}
@@ -102,7 +102,7 @@ export const CardMedia = ({
 	sizes = '(max-width: 768px) 70vw, (max-width: 1200px) 20vw',
 }: CardMediaProps) => {
 	return (
-		<div className='absolute w-full h-full overflow-clip rounded-xl'>
+		<div className="absolute w-full h-full overflow-clip rounded-xl">
 			<MotionImage
 				src={src}
 				alt={alt}
@@ -127,15 +127,15 @@ export const CardContent = ({
 		text,
 		iconRight = (
 			<MoveRight
-				className='group-hover:translate-x-1 transition-all'
+				className="group-hover:translate-x-1 transition-all"
 				size={16}
 			/>
 		),
 	} = ctaProps || {};
 
 	const ctaMarkup = ctaProps && (
-		<div className='flex flex-row gap-1 items-center justify-center text-slate-800 dark:text-slate-300'>
-			<p className='text-xs font-bold uppercase text-slate-800 dark:text-slate-300'>
+		<div className="flex flex-row gap-1 items-center justify-center text-slate-800 dark:text-slate-300">
+			<p className="text-xs font-bold uppercase text-slate-800 dark:text-slate-300">
 				{text}
 			</p>
 			{iconRight}
@@ -144,22 +144,22 @@ export const CardContent = ({
 
 	return (
 		<>
-			<div className='absolute rounded-xl z-10 bottom-0 h-4/5 w-full bg-gradient-to-t from-slate-200 dark:from-slate-800 from-0% via-slate-100 dark:via-slate-800/90 via-30% to-transparent to-100%' />
+			<div className="absolute rounded-xl z-10 bottom-0 h-4/5 w-full bg-gradient-to-t from-slate-200 dark:from-slate-800 from-0% via-slate-100 dark:via-slate-800/90 via-30% to-transparent to-100%" />
 			<div
 				className={cn(
 					`flex flex-col items-start p-4 gap-1 absolute bottom-0 left-0 z-20`,
-					className
+					className,
 				)}
 			>
 				{aboveTextMarkup}
 				<motion.p
-					className='font-bold text-xs sm:text-sm uppercase text-foreground'
+					className="font-bold text-xs sm:text-sm uppercase text-foreground"
 					variants={VARIANTS}
 				>
 					{title}
 				</motion.p>
 				<motion.p
-					className='font-medium text-md sm:text-lg text-foreground line-clamp-3'
+					className="font-medium text-md sm:text-lg text-foreground line-clamp-3"
 					variants={VARIANTS}
 				>
 					{body}

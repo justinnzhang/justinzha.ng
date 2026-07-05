@@ -19,7 +19,7 @@ export const ALL_REFERRALS: { [key: string]: RecCardProps } = {
 		headlineMarkup: (
 			<p>
 				I&apos;m currently using Visible by Verizon, use my code{' '}
-				<a href={VISIBLE_CTAS.link} className='underline'>
+				<a href={VISIBLE_CTAS.link} className="underline">
 					{VISIBLE_CTAS.code}
 				</a>{' '}
 				to get $20 off your bill!
@@ -36,7 +36,7 @@ export const ALL_REFERRALS: { [key: string]: RecCardProps } = {
 		headlineMarkup: (
 			<p>
 				Sofi is where I do all my banking! Use my{' '}
-				<a href={SOFI_CTAS.link} className='underline'>
+				<a href={SOFI_CTAS.link} className="underline">
 					referral link
 				</a>{' '}
 				to get an extra for opening an account!

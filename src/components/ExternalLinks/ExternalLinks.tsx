@@ -51,14 +51,14 @@ const LINKS_CONTENT = [
 
 export const ExternalLinks = () => {
 	return (
-		<div className='grid grid-cols-6 sm:grid-cols-12 gap-4'>
+		<div className="grid grid-cols-6 sm:grid-cols-12 gap-4">
 			{LINKS_CONTENT.map((content) => (
 				<Card
-					className='col-span-3 sm:col-span-3 h-fit'
+					className="col-span-3 sm:col-span-3 h-fit"
 					linkProps={content.linkProps}
 					isExternal
 					key={content.title}
-					minHeightClass='min-h-[125px]'
+					minHeightClass="min-h-[125px]"
 				>
 					<CardMedia
 						src={content.media.src}
@@ -70,7 +70,7 @@ export const ExternalLinks = () => {
 					<CardContent
 						title={content.title}
 						body={content.body}
-						className='text-center'
+						className="text-center"
 					/>
 				</Card>
 			))}

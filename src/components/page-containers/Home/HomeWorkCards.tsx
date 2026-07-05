@@ -31,10 +31,10 @@ export const HomeWorkCards = () => {
 		<LazyMotion features={domAnimation}>
 			<m.div
 				variants={VARIANTS}
-				initial='initial'
-				animate='animate'
-				exit='exit'
-				className='overflow-y-auto pb-4 sm:px-4 w-full'
+				initial="initial"
+				animate="animate"
+				exit="exit"
+				className="overflow-y-auto pb-4 sm:px-4 w-full"
 			>
 				<div className={`${gridClassName} ${MOBILE_CHILD_SPACING}`}>
 					{workContent.map((card) => (
