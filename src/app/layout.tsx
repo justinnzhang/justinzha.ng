@@ -1,13 +1,12 @@
-import type { Metadata, Viewport } from 'next';
-import { Urbanist } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import type { Metadata, Viewport } from 'next';
+import { Urbanist } from 'next/font/google';
 
 import { Footer, Navbar } from '@/components';
-import { baseMetadata } from '@/constants';
 import { Toaster } from '@/components/ui/sonner';
-import { Suspense } from 'react';
+import { baseMetadata } from '@/constants';
 
 import './custom.css';
 import './globals.css';
@@ -16,9 +15,7 @@ import { cn } from '@/lib/utils';
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-	...baseMetadata,
-};
+export const metadata: Metadata = baseMetadata;
 
 export const viewport: Viewport = {
 	colorScheme: 'dark',
@@ -33,6 +30,8 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const googleAnalyticsId = process.env.GOOGLE_TAG_ID;
+
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body>
@@ -42,25 +41,23 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<Suspense fallback={null}>
-						<main
-							className={cn(
-								`${urbanist.className} bg-gradient-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`,
-							)}
-						>
-							{children}
-							<Suspense fallback={null}>
-								<Navbar />
-							</Suspense>
-							<Footer />
-							<Toaster position="top-right" />
-						</main>
-					</Suspense>
+					<main
+						className={cn(
+							`${urbanist.className} bg-linear-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`,
+						)}
+					>
+						{children}
+						<Navbar />
+						<Footer />
+						<Toaster position="top-right" />
+					</main>
 					<Analytics />
 					<SpeedInsights />
 				</ThemeProvider>
+				{googleAnalyticsId ? (
+					<GoogleAnalytics gaId={googleAnalyticsId} />
+				) : null}
 			</body>
-			<GoogleAnalytics gaId={process.env.GOOGLE_TAG_ID!} />
 		</html>
 	);
 }

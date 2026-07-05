@@ -1,13 +1,10 @@
-import { baseMetadata } from '@/constants';
+import { createPageMetadata } from '@/constants';
 import { BlogTable, RecCard, ALL_REFERRALS } from '@/components';
 
 import { BlogPage } from '@/components/page-containers/blog';
 import { visaTable } from './moving.content';
 
-export const metadata = {
-	...baseMetadata,
-	title: 'Moving to the USA',
-};
+export const metadata = createPageMetadata('Moving to the USA', '/blog/moving');
 
 export const wrapperClass = 'px-4 sm:px-8';
 
