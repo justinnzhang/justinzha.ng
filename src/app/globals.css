@@ -247,3 +247,41 @@
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
 }
+
+.app-shell {
+	--panel-height: 50dvh;
+	--panel-width: 50vw;
+	--panel-handle-size: 1.5rem;
+	--panel-corner-radius: var(--radius-2xl);
+}
+
+.app-shell:has(#split-panel) {
+	height: 100dvh;
+	overflow: hidden;
+	padding-bottom: calc(var(--panel-height) + var(--panel-handle-size));
+	background: black;
+}
+
+.app-shell:has(#split-panel) > .primary-route {
+	height: 100%;
+	min-height: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-radius: 0 0 var(--panel-corner-radius) var(--panel-corner-radius);
+	contain: layout paint;
+}
+
+.app-shell:has(#split-panel) > .primary-route > * {
+	min-height: 100%;
+}
+
+@media (min-width: 640px) {
+	.app-shell:has(#split-panel) {
+		padding-right: calc(var(--panel-width) + var(--panel-handle-size));
+		padding-bottom: 0;
+	}
+
+	.app-shell:has(#split-panel) > .primary-route {
+		border-radius: 0 var(--panel-corner-radius) var(--panel-corner-radius) 0;
+	}
+}

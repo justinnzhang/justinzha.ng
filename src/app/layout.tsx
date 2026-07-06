@@ -27,8 +27,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
 	children,
+	panel,
 }: Readonly<{
 	children: React.ReactNode;
+	panel: React.ReactNode;
 }>) {
 	const googleAnalyticsId = process.env.GOOGLE_TAG_ID;
 
@@ -46,13 +48,13 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<main
-						className={cn(
-							`bg-linear-to-b from-background dark:from-slate-950 to-slate-100 dark:to-slate-900 bg-background dark:bg-slate-950 min-h-screen pb-[100px]`,
-						)}
+						id="app-content"
+						className={cn('app-shell bg-white dark:bg-black')}
 					>
-						{children}
-						<Navbar />
-						<Footer />
+						<section className="primary-route overflow-hidden">
+							{children}
+						</section>
+						{panel}
 						<Toaster position="top-right" />
 					</main>
 					<Analytics />

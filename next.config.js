@@ -15,6 +15,7 @@ const nextConfig = {
 	turbopack: {
 		root: path.join(__dirname, '..'),
 	},
+	allowedDevOrigins: ['192.168.2.1'],
 };
 
 module.exports = withMDX(nextConfig);
