@@ -4,7 +4,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import { Figtree } from 'next/font/google';
 
-import { Footer, Navbar } from '@/components';
 import { Toaster } from '@/components/ui/sonner';
 import { baseMetadata } from '@/constants';
 
