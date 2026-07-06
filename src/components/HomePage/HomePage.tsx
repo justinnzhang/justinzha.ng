@@ -1,45 +1,99 @@
-import { PUBLIC_EMAIL } from '@/constants';
-import { Mail, Download } from 'lucide-react';
-import { ExternalLinks } from '../ExternalLinks';
-import { Heading } from '../Heading';
-import { LocationDot } from '../LocationDot';
-import { HomeWorkCards } from '../page-containers';
-import { Button } from '@/components/ui/button';
-import { PUBLIC_RESUME_LINK } from '@/constants';
 import Link from 'next/link';
+import { buttonVariants } from '../ui/button';
+import { WorkHistory, type WorkHistoryItem } from '../WorkHistory/WorkHistory';
+
+const WORK_HISTORY = [
+	{
+		title: 'Frontend Tech Lead',
+		company: 'Realtor.com',
+		imageKey: 'realtor',
+		dates: '2023 — Present',
+		body: (
+			<p>
+				Building RealAssist and Realtor.com&apos;s consumer-facing AI
+				applications, while leading frontend architecture and delivery.
+			</p>
+		),
+	},
+	{
+		title: 'Product Intern',
+		company: 'Meta',
+		imageKey: 'meta',
+		dates: '2022',
+		body: <p>Drove the launch of Facebook Marketplace seller campaigns.</p>,
+	},
+	{
+		title: 'Software Engineer Intern',
+		company: 'Shopify',
+		imageKey: 'shopify',
+		dates: '2021',
+		body: (
+			<p>
+				Launched Shopify&apos;s GitHub integration, including its syncing UI and
+				logging capabilities.
+			</p>
+		),
+	},
+	{
+		title: 'Co-founder',
+		company: 'Casecom',
+		imageKey: 'casecom',
+		dates: '2020 — 2022',
+		body: (
+			<p>
+				Created a digital platform for Canadian case competitions, landed
+				Shopify as a client, and reached positive cash flow.
+			</p>
+		),
+	},
+	{
+		title: 'Co-chair',
+		company: 'Hack Western',
+		imageKey: 'hackWestern',
+		dates: '2019 — 2022',
+		body: (
+			<p>
+				Helped lead one of Canada&apos;s largest student hackathons, reaching
+				more than 1,200 students worldwide.
+			</p>
+		),
+	},
+] satisfies WorkHistoryItem[];
+
 export const HomePage = () => {
 	return (
-		<div className='flex flex-col justify-start max-w-5xl w-full min-h-screen h-full pt-8 sm:pt-12 gap-4 sm:gap-8 mx-auto'>
-			<section className='flex flex-col gap-4'>
-				<div className='px-4 flex flex-col gap-4 pb-2'>
-					<Heading variant='h1'>👋 Hey! I&apos;m Justin Zhang</Heading>
-					<LocationDot />
-					<p className='text-lg sm:text-xl font-medium sm:w-2/3'>
-						I&apos;m a full-stack software engineer with a background in
-						business & design. Here&apos;s a couple things that I&apos;m proud
-						of!
-					</p>
-					<div className='flex flex-row gap-4 sm:w-1/3'>
-						<Button variant='outline' className='w-full' asChild>
-							<Link href={`mailto:${PUBLIC_EMAIL}`} target="_blank">
-								<Mail className='mr-2 h-4 w-4' />
-								Email me
-							</Link>
-						</Button>
-						<Button variant='default' className='w-full' asChild>
-							<Link href={PUBLIC_RESUME_LINK} target="_blank">
-								<Download className='mr-2 h-4 w-4' />
-								Resume
-							</Link>
-						</Button>
-					</div>
-				</div>
-				<HomeWorkCards />
-			</section>
-			<section className='flex flex-col gap-2 sm:gap-4 px-4 sm:px-4'>
-				<Heading variant='h2'>Find me on the internet</Heading>
-				<ExternalLinks />
-			</section>
+		<div className="@container/home min-h-full w-full pb-16 bg-zinc-900">
+			<div className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-start gap-4 px-4 pt-8 @min-[40rem]/home:gap-8 @min-[40rem]/home:pt-12">
+				<h1 className="text-lg font-bold @min-[40rem]/home:text-2xl">
+					I&apos;m Justin Zhang, a Senior Software Engineer who combines
+					business, design, and technology to build products.
+				</h1>
+				<p>
+					Currently the Frontend Tech Lead at{' '}
+					<Link
+						href="/work/real-assist"
+						className={buttonVariants({
+							size: 'sm',
+							variant: 'secondary',
+						})}
+					>
+						Realtor.com
+					</Link>{' '}
+					building RealAssist & our consumer-facing AI applications.
+				</p>
+				<section
+					className="mt-4 flex flex-col gap-6"
+					aria-labelledby="work-heading"
+				>
+					<h2
+						id="work-heading"
+						className="text-lg font-bold @min-[40rem]/home:text-xl"
+					>
+						Selected work
+					</h2>
+					<WorkHistory items={WORK_HISTORY} />
+				</section>
+			</div>
 		</div>
 	);
 };

@@ -1,9 +1,8 @@
 'use client';
 
-import { m, LazyMotion, domAnimation } from 'motion/react';
-
-import { workContent } from './content';
+import { domAnimation, LazyMotion, m } from 'motion/react';
 import { GenerateCard } from '@/components/Card';
+import { workContent } from './content';
 
 const VARIANTS = {
 	initial: {
@@ -31,10 +30,10 @@ export const HomeWorkCards = () => {
 		<LazyMotion features={domAnimation}>
 			<m.div
 				variants={VARIANTS}
-				initial='initial'
-				animate='animate'
-				exit='exit'
-				className='overflow-y-auto pb-4 sm:px-4 w-full'
+				initial="initial"
+				animate="animate"
+				exit="exit"
+				className="overflow-y-auto pb-4 sm:px-4 w-full"
 			>
 				<div className={`${gridClassName} ${MOBILE_CHILD_SPACING}`}>
 					{workContent.map((card) => (

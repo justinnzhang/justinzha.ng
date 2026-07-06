@@ -1,4 +1,4 @@
-import { Card, CardMedia, CardContent } from './Card';
+import { Card, CardContent, CardMedia } from './Card';
 import { BaseCardProps, CardContentProps, CardMediaProps } from './types';
 
 export interface GenerateCardProps {

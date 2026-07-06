@@ -17,12 +17,12 @@ export const BlogTable = ({
 	return (
 		<table className={cn('w-full', tableClassName)}>
 			<thead>
-				<tr className='m-0 border-t p-0 even:bg-muted'>
+				<tr className="m-0 border-t p-0 even:bg-muted">
 					{headers.map(({ content, className }, index) => (
 						<th
 							className={cn(
 								'border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right',
-								className
+								className,
 							)}
 							key={`${content}-${index}`}
 						>
@@ -33,11 +33,11 @@ export const BlogTable = ({
 			</thead>
 			<tbody>
 				{rows.map((row, index) => (
-					<tr className='m-0 border-t p-0' key={`${row}-${index}`}>
+					<tr className="m-0 border-t p-0" key={`${row}-${index}`}>
 						{row.map((cell, index) => (
 							<td
 								className={cn(
-									'border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right'
+									'border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right',
 								)}
 								key={`${cell}-${index}`}
 							>

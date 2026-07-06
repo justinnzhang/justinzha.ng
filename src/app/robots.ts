@@ -1,16 +1,13 @@
-import { type MetadataRoute } from 'next';
-import { headers } from 'next/headers';
+import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/constants';
 
-export default async function robots(): Promise<MetadataRoute.Robots> {
-	const headersList = await headers();
-	const domain = headersList.get('host')!;
-
+export default function robots(): MetadataRoute.Robots {
 	return {
 		rules: {
 			userAgent: '*',
 			allow: ['/', '/api/og/*'],
 			disallow: '/private/',
 		},
-		sitemap: `https://${domain}/sitemap.xml`,
+		sitemap: new URL('/sitemap.xml', SITE_URL).toString(),
 	};
 }

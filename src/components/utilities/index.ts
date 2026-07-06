@@ -1,2 +1,2 @@
-export { MotionLink } from './MotionLink';
 export { MotionImage } from './MotionImage';
+export { MotionLink } from './MotionLink';
