@@ -4,5 +4,9 @@ import { SplitPanel } from '@/components/SplitPanel';
 export default function RealAssistPanelLayout({
 	children,
 }: Readonly<{ children: ReactNode }>) {
-	return <SplitPanel label="RealAssist preview">{children}</SplitPanel>;
+	return (
+		<SplitPanel fullPageHref="/work/real-assist" label="RealAssist preview">
+			{children}
+		</SplitPanel>
+	);
 }

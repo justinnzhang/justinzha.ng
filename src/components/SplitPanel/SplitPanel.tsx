@@ -1,10 +1,10 @@
 'use client';
 
 import clsx from 'clsx';
-import { X } from 'lucide-react';
+import { Maximize2, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import type { ReactNode } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { useSplitPanel } from './useSplitPanel';
 
 const separatorLayoutStyles =
@@ -16,20 +16,21 @@ const separatorPillStyles =
 const separatorFocusStyles =
 	'focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white';
 const panelSurfaceStyles =
-	'h-full w-full overflow-y-auto bg-background rounded-(--panel-corner-radius) contain-[layout_paint_style]';
+	'flex h-full w-full flex-col overflow-hidden bg-background rounded-(--panel-corner-radius) contain-[layout_paint_style]';
 
 interface SplitPanelProps {
 	children: ReactNode;
+	fullPageHref: string;
 	label?: string;
 }
 
 export function SplitPanel({
 	children,
+	fullPageHref,
 	label = 'Preview panel',
 }: SplitPanelProps) {
 	const router = useRouter();
 	const {
-		closeButtonRef,
 		dragFillRef,
 		panelDimmerRef,
 		panelRef,
@@ -61,17 +62,6 @@ export function SplitPanel({
 					className="pointer-events-none absolute top-0 right-0 left-0 z-20 h-px origin-top bg-black opacity-0 will-change-transform sm:inset-y-0 sm:right-auto sm:h-auto sm:w-px sm:origin-left"
 					aria-hidden="true"
 				/>
-				<Button
-					ref={closeButtonRef}
-					type="button"
-					variant="outline"
-					size="icon"
-					className="absolute top-3 right-3 z-30 shadow-sm transition-opacity duration-150 motion-reduce:transition-none"
-					aria-label={`Close ${label}`}
-					onClick={() => router.back()}
-				>
-					<X aria-hidden="true" />
-				</Button>
 				<div
 					ref={separatorRef}
 					role="separator"
@@ -85,7 +75,37 @@ export function SplitPanel({
 					)}
 					{...separatorHandlers}
 				/>
-				<div className={panelSurfaceStyles}>{children}</div>
+				<div className={panelSurfaceStyles}>
+					<div
+						className="flex shrink-0 items-center justify-between gap-3 rounded-t-(--panel-corner-radius) border-b border-border bg-zinc-900 px-3 py-2"
+						aria-label={`${label} controls`}
+					>
+						<p className="truncate text-sm font-medium">{label}</p>
+						<div className="flex shrink-0 items-center gap-1">
+							{/* A document navigation exits the intercepted route state. */}
+							<a
+								href={fullPageHref}
+								className={buttonVariants({
+									variant: 'outline',
+									size: 'icon',
+								})}
+								aria-label={`Open ${label} as a full page`}
+							>
+								<Maximize2 aria-hidden="true" />
+							</a>
+							<Button
+								type="button"
+								variant="outline"
+								size="icon"
+								aria-label={`Close ${label}`}
+								onClick={() => router.back()}
+							>
+								<X aria-hidden="true" />
+							</Button>
+						</div>
+					</div>
+					<div className="min-h-0 flex-1 overflow-y-auto">{children}</div>
+				</div>
 			</aside>
 		</>
 	);

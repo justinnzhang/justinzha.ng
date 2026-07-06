@@ -1,9 +1,8 @@
 'use client';
 
-import { m, LazyMotion, domAnimation } from 'motion/react';
-
-import { workContent } from './content';
+import { domAnimation, LazyMotion, m } from 'motion/react';
 import { GenerateCard } from '@/components/Card';
+import { workContent } from './content';
 
 const VARIANTS = {
 	initial: {

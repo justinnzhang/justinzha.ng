@@ -33,7 +33,6 @@ export function useSplitPanel() {
 	const dragFillRef = useRef<HTMLDivElement | null>(null);
 	const primaryDimmerRef = useRef<HTMLDivElement | null>(null);
 	const panelDimmerRef = useRef<HTMLDivElement | null>(null);
-	const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 	const desktopMediaRef = useRef<MediaQueryList | null>(null);
 	const resizeFrameRef = useRef<number | null>(null);
 	const dragSessionRef = useRef<DragSession | null>(null);
@@ -49,7 +48,6 @@ export function useSplitPanel() {
 			if (resizeFrameRef.current !== null) {
 				window.cancelAnimationFrame(resizeFrameRef.current);
 			}
-
 			const shell = shellRef.current;
 			shell?.style.removeProperty('--panel-width');
 			shell?.style.removeProperty('--panel-height');
@@ -60,7 +58,6 @@ export function useSplitPanel() {
 			dragFillRef.current = null;
 			primaryDimmerRef.current = null;
 			panelDimmerRef.current = null;
-			closeButtonRef.current = null;
 			desktopMediaRef.current = null;
 			document.body.style.removeProperty('cursor');
 			document.body.style.removeProperty('user-select');
@@ -123,9 +120,6 @@ export function useSplitPanel() {
 		}
 		if (panelDimmerRef.current) {
 			panelDimmerRef.current.style.opacity = opacity;
-		}
-		if (closeButtonRef.current) {
-			closeButtonRef.current.style.opacity = active ? '0' : '';
 		}
 	};
 
@@ -235,7 +229,6 @@ export function useSplitPanel() {
 	};
 
 	return {
-		closeButtonRef,
 		dragFillRef,
 		panelDimmerRef,
 		panelRef,

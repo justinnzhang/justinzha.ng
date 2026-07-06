@@ -1,8 +1,8 @@
 'use client';
 
 import { Copy } from 'lucide-react';
-import { Button } from '../ui/button';
 import { toast } from 'sonner';
+import { Button } from '../ui/button';
 
 interface Props {
 	code: string;

@@ -62,9 +62,9 @@ const WORK_HISTORY = [
 
 export const HomePage = () => {
 	return (
-		<div className="min-h-full w-full pb-16 bg-zinc-900">
-			<div className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-start gap-4 px-4 pt-8 sm:gap-8 sm:pt-12">
-				<h1 className="text-lg font-bold sm:text-2xl">
+		<div className="@container/home min-h-full w-full pb-16 bg-zinc-900">
+			<div className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-start gap-4 px-4 pt-8 @min-[40rem]/home:gap-8 @min-[40rem]/home:pt-12">
+				<h1 className="text-lg font-bold @min-[40rem]/home:text-2xl">
 					I&apos;m Justin Zhang, a Senior Software Engineer who combines
 					business, design, and technology to build products.
 				</h1>
@@ -85,7 +85,10 @@ export const HomePage = () => {
 					className="mt-4 flex flex-col gap-6"
 					aria-labelledby="work-heading"
 				>
-					<h2 id="work-heading" className="text-lg font-bold sm:text-xl">
+					<h2
+						id="work-heading"
+						className="text-lg font-bold @min-[40rem]/home:text-xl"
+					>
 						Selected work
 					</h2>
 					<WorkHistory items={WORK_HISTORY} />

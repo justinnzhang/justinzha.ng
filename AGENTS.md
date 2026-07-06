@@ -21,6 +21,8 @@ Use Bun; `bun.lock` is the dependency lockfile. Node 22.9.0 is specified in `.nv
 
 Follow the repository's Biome configuration: tabs, semicolons, single quotes, and organized imports. TypeScript runs in strict mode; avoid `any` and keep public props and helper parameters explicitly typed. Use PascalCase for React components and component files (`ThemeToggle.tsx`), `useCamelCase` for hooks, camelCase for functions, and uppercase names for shared constants. Prefer the `@/` alias for imports from `src/`. Keep route-specific content near its route and export reusable modules through local `index.ts` files.
 
+Build page and container responsiveness with Tailwind container queries, not viewport media-query variants. Mark the page or container root with a named `@container/<name>` utility and use named descendant variants such as `@min-[40rem]/<name>:`. Remember that a container cannot query itself, so responsive styles belong on its descendants. Reserve viewport variants such as `sm:` and `md:` for behavior that genuinely depends on the viewport rather than the component's available space.
+
 ## Testing Guidelines
 
 No automated test framework or coverage threshold is currently configured. Before submitting changes, run `bun run typecheck`, `bun run check`, and `bun run build`. Manually verify affected routes at relevant responsive sizes and in both light and dark themes. If adding tests, colocate them as `*.test.ts` or `*.test.tsx` and add the runner command to `package.json`.
