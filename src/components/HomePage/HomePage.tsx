@@ -62,7 +62,7 @@ const WORK_HISTORY = [
 
 export const HomePage = () => {
 	return (
-		<div className="min-h-full w-full bg-zinc-900">
+		<div className="min-h-full w-full pb-16 bg-zinc-900">
 			<div className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-start gap-4 px-4 pt-8 sm:gap-8 sm:pt-12">
 				<h1 className="text-lg font-bold sm:text-2xl">
 					I&apos;m Justin Zhang, a Senior Software Engineer who combines

@@ -1,11 +1,10 @@
 'use client';
 
-import { motion } from 'motion/react';
-import { MotionImage, MotionLink } from '../utilities';
 import { ExternalLink, Link, MoveRight } from 'lucide-react';
-
-import { BaseCardProps, CardMediaProps, CardContentProps } from './types';
+import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
+import { MotionImage, MotionLink } from '../utilities';
+import { BaseCardProps, CardContentProps, CardMediaProps } from './types';
 
 const VARIANTS = {
 	initial: {
@@ -127,7 +126,7 @@ export const CardContent = ({
 		text,
 		iconRight = (
 			<MoveRight
-				className="group-hover:translate-x-1 transition-all"
+				className="group-hover:translate-x-1 transition-transform"
 				size={16}
 			/>
 		),

@@ -3,6 +3,7 @@ import { GenerateCardProps } from '@/components/Card/GenerateCard';
 import { generateUtm } from '@/lib';
 import { cn } from '@/lib/utils';
 import { getAssetUrl } from '@/utils';
+
 const minHeightClass = 'min-h-[250px] sm:min-h-[250px]';
 
 export const workContent: GenerateCardProps[] = [
@@ -25,7 +26,7 @@ export const workContent: GenerateCardProps[] = [
 		children: (
 			<>
 				<div
-					className={`absolute bottom-0 right-0 -translate-x-8 -translate-y-2/3 md:-translate-y-1/3 w-2/3 h-1/2 md:w-1/3 md:h-3/5 rotate-[1deg] bg-slate-100 z-[5] md:group-hover:-translate-x-4 transition-all duration-100 rounded-md transform-gpu bg-no-repeat bg-contain bg-center bg-fixed border-2 border-slate-200`}
+					className={`absolute bottom-0 right-0 -translate-x-8 -translate-y-2/3 md:-translate-y-1/3 w-2/3 h-1/2 md:w-1/3 md:h-3/5 rotate-[1deg] bg-slate-100 z-[5] md:group-hover:-translate-x-4 transition-transform duration-100 rounded-md transform-gpu bg-no-repeat bg-contain bg-center border-2 border-slate-200`}
 					style={{
 						backgroundImage: `url('${getAssetUrl(
 							'work-cards/hashflag-animated.webp',
@@ -33,7 +34,7 @@ export const workContent: GenerateCardProps[] = [
 					}}
 				/>
 				<div
-					className={`absolute bottom-0 right-0 invisible sm:visible -translate-x-16 md:-translate-x-16 -translate-y-2/3 md:-translate-y-1/3 w-2/3 h-1/2 md:w-1/3 md:h-3/5 rotate-[3deg] bg-slate-200 z-[4] md:group-hover:-translate-x-32 group-hover:-rotate-1 group-hover:scale-[1.02] transition-all duration-100 rounded-md transform-gpu bg-no-repeat bg-cover bg-center bg-fixed border-2 border-slate-200`}
+					className={`absolute bottom-0 right-0 invisible sm:visible -translate-x-16 md:-translate-x-16 -translate-y-2/3 md:-translate-y-1/3 w-2/3 h-1/2 md:w-1/3 md:h-3/5 rotate-[3deg] bg-slate-200 z-[4] md:group-hover:-translate-x-32 group-hover:-rotate-1 group-hover:scale-[1.02] transition-transform duration-100 rounded-md transform-gpu bg-no-repeat bg-cover bg-center border-2 border-slate-200`}
 					style={{
 						backgroundImage: `url('${getAssetUrl(
 							'work-cards/vu-site-2-sm.png',
@@ -41,7 +42,7 @@ export const workContent: GenerateCardProps[] = [
 					}}
 				/>
 				<div
-					className={`absolute bottom-0 right-0 invisible sm:visible md:-translate-x-32 -translate-y-2/3 md:-translate-y-1/3 w-2/3 h-1/2 md:w-1/3 md:h-3/5 rotate-[-2deg] bg-slate-300 z-[3] md:group-hover:-translate-x-60 group-hover:-rotate-2 group-hover:scale-[1.04] transition-all duration-100 rounded-md transform-gpu bg-no-repeat bg-cover bg-center bg-fixed border-2 border-slate-200`}
+					className={`absolute bottom-0 right-0 invisible sm:visible md:-translate-x-32 -translate-y-2/3 md:-translate-y-1/3 w-2/3 h-1/2 md:w-1/3 md:h-3/5 rotate-[-2deg] bg-slate-300 z-[3] md:group-hover:-translate-x-60 group-hover:-rotate-2 group-hover:scale-[1.04] transition-transform duration-100 rounded-md transform-gpu bg-no-repeat bg-cover bg-center border-2 border-slate-200`}
 					style={{
 						backgroundImage: `url('${getAssetUrl(
 							'work-cards/vu-site-3-sm.png',
@@ -61,7 +62,7 @@ export const workContent: GenerateCardProps[] = [
 		children: (
 			<>
 				<div
-					className={`absolute bottom-1 right-1/2 translate-x-1/2 w-1/3 h-4/5 bg-slate-100 z-[5] group-hover:scale-[1.05] group-hover:-translate-y-4 group-hover:-rotate- transition-all duration-100 rounded-md transform-gpu bg-no-repeat bg-contain bg-fixed border-[1px] border-slate-200`}
+					className={`absolute bottom-1 right-1/2 translate-x-1/2 w-1/3 h-4/5 bg-slate-100 z-[5] group-hover:scale-[1.05] group-hover:-translate-y-4 group-hover:-rotate- transition-transform duration-100 rounded-md transform-gpu bg-no-repeat bg-contain border-[1px] border-slate-200`}
 					style={{
 						backgroundImage: `url('${getAssetUrl(
 							'work-cards/fb-marketplace.png',
@@ -69,7 +70,7 @@ export const workContent: GenerateCardProps[] = [
 					}}
 				/>
 				<div
-					className={`absolute bottom-1/2 right-[28%] md:right-1/4 translate-x-1/2 w-12 m:w-16 h-12 md:h-16 rotate-2 bg-slate-100 z-[4] group-hover:scale-[1.1] group-hover:-translate-y-4 group-hover:rotate-6 group-hover:translate-x-6 md:group-hover:translate-x-12 transition-all duration-100 rounded-md transform-gpu bg-no-repeat bg-contain bg-center bg-fixed border-[1px] border-slate-200`}
+					className={`absolute bottom-1/2 right-[28%] md:right-1/4 translate-x-1/2 w-12 m:w-16 h-12 md:h-16 rotate-2 bg-slate-100 z-[4] group-hover:scale-[1.1] group-hover:-translate-y-4 group-hover:rotate-6 group-hover:translate-x-6 md:group-hover:translate-x-12 transition-transform duration-100 rounded-md transform-gpu bg-no-repeat bg-contain bg-center border-[1px] border-slate-200`}
 					style={{
 						backgroundImage: `url('${getAssetUrl('work-cards/meta.png')}')`,
 					}}
@@ -89,7 +90,7 @@ export const workContent: GenerateCardProps[] = [
 		},
 		children: (
 			<div
-				className={`absolute top-0 right-0 w-full h-full z-[5] transition-all duration-100 rounded-md transform-gpu group-hover:scale-[1.02] bg-no-repeat bg-contain bg-fixed`}
+				className={`absolute top-0 right-0 w-full h-full z-[5] transition-transform duration-100 rounded-md transform-gpu group-hover:scale-[1.02] bg-no-repeat bg-contain`}
 				style={{
 					backgroundImage: `url('${getAssetUrl(
 						'work-cards/casecom-hero-top.png',
@@ -160,7 +161,7 @@ export const workContent: GenerateCardProps[] = [
 		children: (
 			<>
 				<div
-					className={`absolute top-[30px] left-1/2 w-36 h-72 z-[5] -translate-x-1/2 group-hover:top-[10px] transition-all duration-100 rounded-md transform-gpu bg-no-repeat bg-contain bg-fixed`}
+					className={`absolute top-[30px] left-1/2 w-36 h-72 z-[5] -translate-x-1/2 group-hover:-translate-y-5 transition-transform duration-100 rounded-md transform-gpu bg-no-repeat bg-contain`}
 					style={{
 						backgroundImage: `url('${getAssetUrl(
 							'work-cards/wrapped-1.png',
@@ -168,7 +169,7 @@ export const workContent: GenerateCardProps[] = [
 					}}
 				/>
 				<div
-					className={`absolute top-[20px] -right-[50px] w-36 h-72 z-[4] transition-all group-hover:top-[35px] duration-100 rounded-md transform-gpu bg-no-repeat bg-contain bg-fixed`}
+					className={`absolute top-[20px] -right-[50px] w-36 h-72 z-[4] group-hover:translate-y-[15px] transition-transform duration-100 rounded-md transform-gpu bg-no-repeat bg-contain`}
 					style={{
 						backgroundImage: `url('${getAssetUrl(
 							'work-cards/wrapped-2.png',
@@ -176,7 +177,7 @@ export const workContent: GenerateCardProps[] = [
 					}}
 				/>
 				<div
-					className={`absolute top-[20px] -left-[50px] w-36 h-72 z-[3] transition-all group-hover:top-[35px] duration-100 rounded-md transform-gpu bg-no-repeat bg-contain bg-fixed`}
+					className={`absolute top-[20px] -left-[50px] w-36 h-72 z-[3] group-hover:translate-y-[15px] transition-transform duration-100 rounded-md transform-gpu bg-no-repeat bg-contain`}
 					style={{
 						backgroundImage: `url('${getAssetUrl(
 							'work-cards/wrapped-3.png',

@@ -16,7 +16,7 @@ const separatorPillStyles =
 const separatorFocusStyles =
 	'focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white';
 const panelSurfaceStyles =
-	'h-full w-full overflow-y-auto bg-background rounded-(--panel-corner-radius)';
+	'h-full w-full overflow-y-auto bg-background rounded-(--panel-corner-radius) contain-[layout_paint_style]';
 
 interface SplitPanelProps {
 	children: ReactNode;

@@ -1,22 +1,14 @@
 'use client';
 
-import { ROUTES } from '@/constants/routes';
+import { ChevronUp, Home, LinkIcon, PersonStanding } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-	Drawer,
-	DrawerClose,
-	DrawerContent,
-	DrawerFooter,
-	DrawerHeader,
-	DrawerTrigger,
-} from '@/components/ui/drawer';
-import { useMediaQuery } from '@/hooks';
+
 import { MinWidthBreakpoint } from '@/constants';
-import { ChevronUp, Home, LinkIcon, PersonStanding } from 'lucide-react';
+import { ROUTES } from '@/constants/routes';
+import { useMediaQuery } from '@/hooks';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '../Theme';
-import { Button } from '../ui/button';
 
 const NAV_ITEMS = [
 	{
@@ -102,63 +94,15 @@ export const Navbar = () => {
 
 	const currentPageName = getCurrentPage(pathname);
 
-	const mobileMarkup = !isDesktop && (
-		<Drawer>
-			<div className="flex flex-row w-full">
-				<DrawerTrigger asChild>
-					<div className="flex flex-row w-[85%] gap-2 text-secondary-foreground items-center px-4 py-2 rounded-full overflow-clip cursor-pointer transition-colors">
-						<p className="truncate">{currentPageName}</p>
-						<ChevronUp />
-					</div>
-				</DrawerTrigger>
-				<ThemeToggleSection />
-			</div>
-			<DrawerContent className="bg-slate-100 dark:bg-slate-800 borderdark:border-slate-900 pb-8">
-				<DrawerHeader>
-					<div className="flex flex-col items-start justify-start text-left">
-						<p className="text-muted-foreground text-sm">Current Page</p>
-						<p className="font-medium">{currentPageName}</p>
-					</div>
-				</DrawerHeader>
-				<div className="flex flex-col px-4">
-					{NAV_ITEMS.map((el) => (
-						<DrawerClose className="" asChild key={`${el.id}-mobile`}>
-							<Link
-								href={el.href}
-								className={cn(
-									`flex flex-row justify-start items-center text-secondary-foreground py-3 rounded-full overflow-clip cursor-pointer transition-colors`,
-									{
-										['font-bold']: pathname === el.href,
-									},
-								)}
-							>
-								<el.icon className="ml-1 w-4 h-4 mr-2 inline" />
-								{el.label}
-							</Link>
-						</DrawerClose>
-					))}
-				</div>
-				<DrawerFooter>
-					<DrawerClose className="w-full" asChild>
-						<Button variant="outline">Close</Button>
-					</DrawerClose>
-				</DrawerFooter>
-			</DrawerContent>
-		</Drawer>
-	);
-
 	return (
 		<nav
 			id="navbar-container"
 			className={cn(
-				'fixed z-50 bg-slate-100 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-full dark:text-slate-200 text-slate-800',
+				'fixed z-50 bg-slate-100 bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-full dark:text-slate-200 text-slate-800',
 				'bottom-6 right-0 left-0 gap-2 mx-auto text-center w-[80%] sm:w-fit',
 			)}
 		>
-			<span className="flex flex-row justify-evenly items-center bg-slate-200 dark:bg-slate-800 rounded-full m-[2px] pl-1 sm:pl-4 pr-4 py-2">
-				{desktopMarkup}
-				{mobileMarkup}
-			</span>
+			Navbar
 		</nav>
 	);
 };

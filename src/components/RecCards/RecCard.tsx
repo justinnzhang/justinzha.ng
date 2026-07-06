@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { Button } from '../ui/button';
-import { CopyCode } from '../CopyCode';
-import { SponsorshipDisclaimer } from './SponsorshipDisclaimer';
 import Image from 'next/image';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { CopyCode } from '../CopyCode';
+import { Button } from '../ui/button';
+import { SponsorshipDisclaimer } from './SponsorshipDisclaimer';
 import { RecCardProps } from './types';
 
 export const RecCard = ({
@@ -37,7 +37,7 @@ export const RecCard = ({
 			>
 				{headlineMarkup}
 				<div className="flex flex-row gap-4 items-center justify-center">
-					<Button asChild>
+					<Button>
 						<Link href={cta.link}>Sign up today</Link>
 					</Button>
 					{copyCodeMarkup}
